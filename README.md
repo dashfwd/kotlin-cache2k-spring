@@ -16,13 +16,13 @@ request will be slow and then all subsequent requests will be fast.  If you uncl
 it, the cache is evicted (everything is deleted from the cache) and requests
 will go back to being slow.
 
-#### Using Cache2K with Spring Boot ####
+#### Configuring Cache2K with Spring Boot from scratch ####
 The general procedure for setting up Cache2K with Spring can be found [in the Cache2K documentation](https://cache2k.org/docs/latest/user-guide.html#spring).
 
 The procedure below is specific to this project (using Gradle and Kotlin).
 
 Steps that are required:
-- Add dependencies for Cache2K to your build (in `build.gradle.kts`); specifically these lines:
+- Add dependencies for Cache2K to your build (in [build.gradle.kts](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/build.gradle.kts)); specifically these lines:
 ```
 	val cache2kVersion = "1.2.2.Final"
    	implementation("org.cache2k:cache2k-api:$cache2kVersion")
@@ -37,7 +37,7 @@ Steps that are required:
     - Annotate it with `@org.springframework.context.annotation.Configuration`
     - Annotate it with `@org.springframework.cache.annotation.EnableCaching`
     - Create a `fun cacheManager(): CacheManager` method annotated with `@Bean`.  See
-       `CachingConfig.kt` in this project for an example.
+       [CachingConfig.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/CachingConfig.kt) in this project for an example.
   
   
   
