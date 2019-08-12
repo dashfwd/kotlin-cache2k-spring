@@ -17,11 +17,8 @@ it, the cache is evicted (everything is deleted from the cache) and requests
 will go back to being slow.
 
 #### Configuring Cache2K with Spring Boot using Gradle/Kotlin ####
-The general procedure for setting up Cache2K with Spring can be found [in the Cache2K documentation](https://cache2k.org/docs/latest/user-guide.html#spring).
-
-The procedure below is specific to this project (using Gradle and Kotlin).
-
-Steps that are required:
+The procedure to set up Cache2K is shown below.  See also the [Cache2K Spring Setup documentation](https://cache2k.org/docs/latest/user-guide.html#spring) which
+provides a more general description of the procedure.
 - Add dependencies for Cache2K to your build (in [build.gradle.kts](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/build.gradle.kts)); specifically these lines:
 ```
 	val cache2kVersion = "1.2.2.Final"
