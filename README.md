@@ -16,7 +16,7 @@ request will be slow and then all subsequent requests will be fast.  If you uncl
 it, the cache is evicted (everything is deleted from the cache) and requests
 will go back to being slow.
 
-#### Configuring Cache2K with Spring Boot from scratch ####
+#### Configuring Cache2K with Spring Boot using Gradle/Kotlin ####
 The general procedure for setting up Cache2K with Spring can be found [in the Cache2K documentation](https://cache2k.org/docs/latest/user-guide.html#spring).
 
 The procedure below is specific to this project (using Gradle and Kotlin).
@@ -40,12 +40,12 @@ Steps that are required:
        [CachingConfig.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/CachingConfig.kt) in this project for an example.
 
 #### Adding Caching to your service layer ####
-Cache2K is now ready to be used in your service layer.  An example see [PersonDataService.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/service/PersonDataService.kt).
+Cache2K is now ready to be used in your service layer.  For an example see [PersonDataService.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/service/PersonDataService.kt).
  
-To have the results of a method cached automatically, use the `@Cacheable` annotation here.  The
+To have the results of a service method cached automatically, use the `@Cacheable` annotation as shown in the code sample below.  The
 first parameter is the name of the cache that was defined in [CachingConfig.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/CachingConfig.kt).
-The `key` parameter defines the key used to look up the cache entry, see the [Spring docs](https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#cache-annotations-cacheable-key)
-for more information on that.
+The `key` parameter is used to define the key used to look the value up in the cache (See the [Spring docs](https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#cache-annotations-cacheable-key)
+for more information on `key`).
 ```
   @Cacheable("allPeopleCache", key = "#root.methodName")
     fun loadPeopleDataUsingCache():PeopleData {
