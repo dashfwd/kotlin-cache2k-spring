@@ -19,12 +19,12 @@ will go back to being slow.
 #### Using Cache2K with Spring Boot ####
 The general procedure for setting up Cache2K with Spring can be found [in the Cache2K documentation](https://cache2k.org/docs/latest/user-guide.html#spring).
 
-This example happens to use Gradle and is configured with a Kotlin build file `build.gradle.kts`.  It
-also uses Kotlin so the configuration code is a little different.
+The procedure below is specific to this project (using Gradle and Kotlin).
 
 Steps that are required:
 - Add dependencies for Cache2K to your build (in `build.gradle.kts`); specifically these lines:
-```	val cache2kVersion = "1.2.2.Final"
+```
+	val cache2kVersion = "1.2.2.Final"
    	implementation("org.cache2k:cache2k-api:$cache2kVersion")
    	runtimeOnly("org.cache2k:cache2k-core:$cache2kVersion")
    	implementation("org.cache2k:cache2k-spring:$cache2kVersion")  
