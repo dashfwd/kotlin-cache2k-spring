@@ -1,71 +1,83 @@
 [
   {
+    "id": 1,
     "firstName": "Bill",
     "lastName": "Murray",
     "birthYear": 1950,
     "category": "Entertainment"
   },
   {
+    "id": 2,
     "firstName": "Melissa",
     "lastName": "Jefferson",
     "birthYear": 1988,
     "category": "Music"
   },
   {
+    "id": 3,
     "firstName": "Alexander",
     "lastName": "Nevermind",
     "birthYear": 1958,
     "category": "Music"
   },
   {
+    "id": 4,
     "firstName": "Kaitlyn",
     "lastName": "Dever",
     "birthYear": 1996,
     "category": "Entertainment"
   },
   {
+    "id": 5,
     "firstName": "Grace",
     "lastName": "Hopper",
     "birthYear": 1906,
     "category": "Software"
   },
   {
+    "id": 6,
     "firstName": "Bill",
     "lastName": "Nye",
     "birthYear": 1955,
     "category": "Science"
   },
   {
+    "id": 7,
     "firstName": "Peter",
     "lastName": "Hernandez",
     "birthYear": 1985,
     "category": "Music"
   },
   {
+    "id": 8,
     "firstName": "James",
     "lastName": "Gosling",
     "birthYear": 1955,
     "category": "Software"
   },
   {
+    "id": 9,
     "firstName": "Dmitry",
     "lastName": "Jemerov",
     "birthYear": 1986,
     "category": "Software"
   },
   {
+    "id": 10,
     "firstName": "Elizabeth",
     "lastName": "Grant",
     "birthYear": 1985,
     "category": "Music"
   },
   {
+    "id": 11,
     "firstName": "Anna Mae",
     "lastName": "Bullock",
     "birthYear": 1939,
     "category": "Music"
   },
   {
+    "id": 12,
     "firstName": "Andrey",
     "lastName": "Breslav",
     "birthYear": 1983,

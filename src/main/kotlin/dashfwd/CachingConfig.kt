@@ -27,6 +27,11 @@ class CachingConfig {
                                 expireAfterWrite(30, TimeUnit.SECONDS).permitNullValues(true).
                                 expiryPolicy(expiryPolicy)
                         },
+                        Function { b -> b.name("personById").
+                                entryCapacity(10).
+                                expireAfterWrite(2, TimeUnit.MINUTES).permitNullValues(true).
+                                expiryPolicy(expiryPolicy)
+                        },
                         // additional example, not used in the demo
                         Function { b -> b.name("example1").
                                 eternal(true).

@@ -17,7 +17,9 @@ import org.springframework.cache.annotation.CacheEvict
 class PersonDataService(
         // Load the JSON from the classpath
         // See https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html
-        @Value("classpath:people.json") val peopleResource:Resource
+        @Value("classpath:people.json") val peopleResource:Resource,
+
+        val cacheManager: org.springframework.cache.CacheManager
 ) {
     private val log = LoggerFactory.getLogger(this::class.java)
 
@@ -37,6 +39,29 @@ class PersonDataService(
         // the annotation will cause all entries to be evicted from the cache
     }
 
+
+    @Cacheable("personById", key="#id")
+    fun findById(id:Int, logFind:Boolean=false): Person? {
+        if (logFind) {
+            log.info("Did a personById lookup for $id")
+        }
+        return when (val peopleResult = loadPeopleDataFromDatabase()) {
+            is PeopleData.Success ->
+                peopleResult.people.firstOrNull { it.id == id }
+            else ->
+                null
+        }
+    }
+
+    @Cacheable("personById", key="#person.id")
+    fun findPersonAgain(person: Person): Person? {
+        return findById(person.id, false)
+    }
+
+    fun removePersonFromCache(person:Person) {
+        // manual cache eviction
+        cacheManager.getCache("personById")?.evict(person.id)
+    }
 
     /**
      * Lambda to load and deserialize peopleData.json
