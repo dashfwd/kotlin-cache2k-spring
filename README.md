@@ -33,10 +33,13 @@ provides a more general description of the procedure.
 - Add a [CachingConfig.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/CachingConfig.kt) class (The name of the class isn't important)
     - Annotate it with `@org.springframework.context.annotation.Configuration`
     - Annotate it with `@org.springframework.cache.annotation.EnableCaching`
-    - Create a `fun cacheManager(): CacheManager` method annotated with `@Bean`.  
+    - Create a `fun cacheManager(): CacheManager` method annotated with `@Bean` and create
+    any caches that are needed for your application.  See  [CachingConfig.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/CachingConfig.kt) for
+    examples.
 
 #### Adding Caching to your service layer ####
-Cache2K is now ready to be used in your service layer.  For an example see [PersonDataService.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/service/PersonDataService.kt).
+Cache2K is now ready to be used in your service layer.  See [PersonDataService.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/service/PersonDataService.kt)
+for an example service that uses Cache2K.
  
 To have the results of a service method cached automatically, use the `@Cacheable` annotation as shown in the code sample below.  The
 first parameter is the name of the cache that was defined in [CachingConfig.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/CachingConfig.kt).
