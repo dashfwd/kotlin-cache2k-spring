@@ -27,10 +27,12 @@ class CachingConfig {
                                 expireAfterWrite(30, TimeUnit.SECONDS).permitNullValues(true).
                                 expiryPolicy(expiryPolicy)
                         },
+                        // additional example, not used in the demo
                         Function { b -> b.name("example1").
                                 eternal(true).
                                 entryCapacity(Long.MAX_VALUE)
                         },
+                        // additional example, not used in the demo
                         Function { b -> b.name("example2").
                                 expireAfterWrite(1, TimeUnit.HOURS)
                                 .entryCapacity(10)
