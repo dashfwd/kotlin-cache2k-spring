@@ -1,7 +1,7 @@
 # Cache2K/Spring Boot/Kotlin example
 #### Overview ####
 This is a Spring Boot project that uses the Cache2K Spring integration 
-as described in the [Cache2K documentation](https://cache2k.org/docs/latest/user-guide.html#spring)
+as described in the [Cache2K documentation](https://cache2k.org/docs/latest/user-guide.html#spring).
 
 #### Running the example server ####
 1. Change to the root directory of the project.
@@ -38,6 +38,22 @@ Steps that are required:
     - Annotate it with `@org.springframework.cache.annotation.EnableCaching`
     - Create a `fun cacheManager(): CacheManager` method annotated with `@Bean`.  See
        [CachingConfig.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/CachingConfig.kt) in this project for an example.
+
+#### Adding Caching to your service layer ####
+Cache2K is now ready to be used in your service layer.  An example see [PersonDataService.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/service/PersonDataService.kt).
+ 
+To have the results of a method cached automatically, use the `@Cacheable` annotation here.  The
+first parameter is the name of the cache that was defined in [CachingConfig.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/CachingConfig.kt).
+The `key` parameter defines the key used to look up the cache entry, see the [Spring docs](https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#cache-annotations-cacheable-key)
+for more information on that.
+```
+  @Cacheable("allPeopleCache", key = "#root.methodName")
+    fun loadPeopleDataUsingCache():PeopleData {
+        return loadPeopleDataFromDatabase()
+    }
+```       
+       
+       
   
   
   
