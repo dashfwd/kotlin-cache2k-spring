@@ -33,11 +33,10 @@ Steps that are required:
 ```
    	implementation("org.springframework.boot:spring-boot-starter-cache")
 ```
-- Add a `CachingConfig.kt` class (The name of the class isn't important)
+- Add a [CachingConfig.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/CachingConfig.kt) class (The name of the class isn't important)
     - Annotate it with `@org.springframework.context.annotation.Configuration`
     - Annotate it with `@org.springframework.cache.annotation.EnableCaching`
-    - Create a `fun cacheManager(): CacheManager` method annotated with `@Bean`.  See
-       [CachingConfig.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/CachingConfig.kt) in this project for an example.
+    - Create a `fun cacheManager(): CacheManager` method annotated with `@Bean`.  
 
 #### Adding Caching to your service layer ####
 Cache2K is now ready to be used in your service layer.  For an example see [PersonDataService.kt](https://github.com/dashfwd/kotlin-cache2k-spring/blob/master/src/main/kotlin/dashfwd/service/PersonDataService.kt).
