@@ -1,0 +1,74 @@
+[
+  {
+    "firstName": "Bill",
+    "lastName": "Murray",
+    "birthYear": 1950,
+    "category": "Entertainment"
+  },
+  {
+    "firstName": "Melissa",
+    "lastName": "Jefferson",
+    "birthYear": 1988,
+    "category": "Music"
+  },
+  {
+    "firstName": "Alexander",
+    "lastName": "Nevermind",
+    "birthYear": 1958,
+    "category": "Music"
+  },
+  {
+    "firstName": "Kaitlyn",
+    "lastName": "Dever",
+    "birthYear": 1996,
+    "category": "Entertainment"
+  },
+  {
+    "firstName": "Grace",
+    "lastName": "Hopper",
+    "birthYear": 1906,
+    "category": "Software"
+  },
+  {
+    "firstName": "Bill",
+    "lastName": "Nye",
+    "birthYear": 1955,
+    "category": "Science"
+  },
+  {
+    "firstName": "Peter",
+    "lastName": "Hernandez",
+    "birthYear": 1985,
+    "category": "Music"
+  },
+  {
+    "firstName": "James",
+    "lastName": "Gosling",
+    "birthYear": 1955,
+    "category": "Software"
+  },
+  {
+    "firstName": "Dmitry",
+    "lastName": "Jemerov",
+    "birthYear": 1986,
+    "category": "Software"
+  },
+  {
+    "firstName": "Elizabeth",
+    "lastName": "Grant",
+    "birthYear": 1985,
+    "category": "Music"
+  },
+  {
+    "firstName": "Anna Mae",
+    "lastName": "Bullock",
+    "birthYear": 1939,
+    "category": "Music"
+  },
+  {
+    "firstName": "Andrey",
+    "lastName": "Breslav",
+    "birthYear": 1983,
+    "category": "Software"
+  }
+]

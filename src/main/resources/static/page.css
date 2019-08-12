@@ -1,0 +1,11 @@
+body {
+    background-color: black;
+    font-family: Arial;
+    color:white;
+    margin:20px;
+}
+
+/* unvisited link */
+a:link, a:visited, a:hover, a:active {
+    color: tan;
+}
