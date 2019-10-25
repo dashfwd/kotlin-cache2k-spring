@@ -21,6 +21,8 @@ class CachingConfig {
 
         // whatevers
 
+        // ever more whatevers!
+
         return SpringCache2kCacheManager()
                 .defaultSetup { b -> b.entryCapacity(2000) }
                 .addCaches(
