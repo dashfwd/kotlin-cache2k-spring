@@ -19,6 +19,10 @@ class CachingConfig {
             if (value == null) { ExpiryTimeValues.NO_CACHE } else { ExpiryTimeValues.ETERNAL }
         }
 
+        // whatevers
+
+        // ever more whatevers!
+
         return SpringCache2kCacheManager()
                 .defaultSetup { b -> b.entryCapacity(2000) }
                 .addCaches(

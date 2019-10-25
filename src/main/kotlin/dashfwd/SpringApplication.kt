@@ -7,5 +7,8 @@ import org.springframework.boot.runApplication
 class KotlinCache2kSpringApplication
 
 fun main(args: Array<String>) {
+	val foo ="stuff"
 	runApplication<KotlinCache2kSpringApplication>(*args)
+
+	// hey this is a test
 }
