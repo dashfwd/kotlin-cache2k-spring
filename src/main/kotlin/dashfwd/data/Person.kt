@@ -7,6 +7,7 @@ data class Person(
         val birthYear: Int,
         val category:String
 ) {
+    // some other (last) new change
     fun matchesSearchCriteria(searchText: String) =
             searchText.isBlank() ||
                     firstName.toLowerCase().contains(searchText) ||
